@@ -1,77 +1,71 @@
-<div align="center">
-  
-  ![GitHub repo size](https://img.shields.io/github/repo-size/pawantech12/note-taking-website)
-  ![GitHub stars](https://img.shields.io/github/stars/pawantech12/note-taking-website?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/pawantech12/note-taking-website?style=social)
+# Notes Desktop Application
 
-  <br />
+A secure note-taking desktop app built with **Electron (frontend)** and **Node.js + Express (backend)**.  
+It supports authentication, CRUD operations on notes, local storage, and packaged `.exe` for Windows.
 
-  <h2 align="center">NotePlus: A MERN Stack Web App</h2>
+---
 
- NotePlus is a web application built with the MERN stack (MongoDB, Express.js, React.js, Node.js) with Vite for frontend build tooling. It allows users to create, manage, and share notes.
+## Setup Instructions
 
-</div>
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/notes-app.git
+   cd notes-app
+   ```
 
-<br />
+2. **Install dependencies (root + backend)**
+   ```bash
+   npm install
+   cd backend
+   npm install
+   cd ..
+   ```
 
+3. **Run backend server**
+   ```bash
+   cd backend
+   node server.js
+   ```
 
-### Prerequisites
+4. **Run desktop app (Electron)**
+   ```bash
+   npm start
+   ```
 
-Before you begin, ensure you have met the following requirements:
+---
 
-* You Should Know Basic or Intermediate of HTML ,CSS,JavaScript,Reactjs,NodeJS,Expressjs,mongodb,some npm libraries.
+## Steps to Run `.exe`
 
+1. Navigate to project root.  
+2. Build the Electron executable:
+   ```bash
+   npm run build
+   ```
+3. Go to the `dist/` folder, you’ll find the generated `.exe`.  
+4. Double-click the `.exe` to launch the Notes desktop app without needing Node.js or setup.
 
-### Project Configuration and changes
+---
 
-#### What you want to run this Project?
+## Design Choices / Assumptions
 
-* Node.js and npm (or yarn) installed on your machine
-* A MongoDB database instance
-* VSCode editor or any code editor
+- **Electron** chosen for cross-platform desktop packaging.  
+- **Express + MongoDB** backend to handle authentication and note persistence.  
+- Used **JWT authentication** for secure login/signup.  
+- **CORS + cookies** configured for safe client-server communication.  
+- App designed to **cache notes locally** in case of server downtime.
 
-###Features:
+---
 
-* Create and edit notes
-* Organize notes with tags
-* Secure user authentication with JWT
-* Password reset functionality
-* Send email notifications (using Nodemailer)
+## Limitations & Future Improvements
 
+- Currently tested only on **Windows** for `.exe`.  
+- Limited offline support (only cached notes available).  
+- No role-based access control, only basic auth.  
+- UI is minimal; can be improved with better design system.  
+- Future improvements:
+  - Full offline-first mode (sync when online).  
+  - Cloud storage integration (Google Drive/Dropbox).  
+  - Real-time collaboration on notes.  
+  - Cross-platform builds for Mac/Linux.  
 
-### Project Contain
-
-* Responsive Navigation Bar with Hamburger Menu
-* Home page
-* Contact page
-* About page
-* login and signup page (with validation and token authentication)
-* Dashboard for managing notes
-* Create,edit note page
-* Published and draft notes list page
-* Profile and edit profile page
-* Use AOS animaion library
-
-### Run Locally
-
-To run **NotePlus Web App** locally, run this command on your git bash:
-
-Linux and macOS:
-
-```bash
-sudo git clone https://github.com/pawantech12/note-taking-website.git
-```
-
-Windows:
-
-```bash
-git clone https://github.com/pawantech12/note-taking-website.git
-```
-
-### Contact
-
-If you want to contact with me you can reach me at [Instagram](https://www.instagram.com/codewithpawan/).
-
-### License
-
-This project is **Free To Use** and does not contains any license.
+---
